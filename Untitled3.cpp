@@ -1,12 +1,14 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<locale.h>
 
 int main(){
-	char nome[2][250];
-	int idade[2], i, maiorIdade = 0, menorIdade = 99999;
-	float peso[2], altura[2], maiorAltura = 0, menorAltura = 99999, maiorPeso = 0, menorPeso = 99999;
+    setlocale(LC_ALL, "portuguese");
+	char nome[5][250];
+	int idade[5], i, maiorIdade = 0, menorIdade = 99999;
+	float peso[5], altura[5], maiorAltura = 0, menorAltura = 99999, maiorPeso = 0, menorPeso = 99999;
 	
-	for(i = 0; i < 2; i++){
+	for(i = 0; i < 5; i++){
 		printf("%d pessoa. Escreva seu nome: ",i + 1);
 		gets(nome[i]);
 		
@@ -33,30 +35,31 @@ int main(){
 	
 	system("cls");
 	
-	for(i = 0; i < 2; i++){
-		printf("%d Nome: %s\n",i + 1, nome[i]);
+	for(i = 0; i < 5; i++){
+		printf("%dº Nome: %s\n",i + 1, nome[i]);
 		printf("Idade: %d\n",idade[i]);
 		printf("Peso: %.2f\n",peso[i]);
 		printf("Altura: %.2f\n",altura[i]);
 	}
 	
-	for(i = 0; i < 2; i++){
+	for(i = 0; i < 5; i++){
 		if(idade[i] == maiorIdade){
 			printf("Nome: %s, maior idade: %d\n",nome[i], maiorIdade);
-		} else if(idade[i] == menorIdade){
+        }
+        if(idade[i] == menorIdade){
 			printf("Nome: %s, menor idade: %d\n",nome[i], menorIdade);
 		}
-		if(altura[i] == maiorAltura){
+        if(altura[i] == maiorAltura){
 			printf("Nome: %s, maior altura: %.2f\n",nome[i],maiorAltura);
 		}
-		if(altura[i] == menorAltura){
+        if(altura[i] == menorAltura){
 			printf("Nome: %s, menor altura: %.2f\n",nome[i],menorAltura);
-		}
-		if(peso[i] == maiorPeso){
+		} 
+        if(peso[i] == maiorPeso){
 			printf("Nome: %s, maior peso: %.2f\n",nome[i],maiorPeso);
 		}
-		if(peso[i] == menorPeso){
-			printf("Nome: %s, menorpeso: %.2f\n",nome[i],menorPeso);
+        if(peso[i] == menorPeso){
+			printf("Nome: %s, menor peso: %.2f\n",nome[i],menorPeso);
 		}
 	}
 	return 0;
