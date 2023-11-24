@@ -9,7 +9,7 @@ int main(){
 	float mediaPar, media;
 	
 	for(i = 0; i < 5; i++){
-		printf("Digite um número: ");
+		printf("Digite um nÃºmero: ");
 		scanf("%d",&numero[i]);
 		 
 		maior = maior > numero[i] ? maior : numero[i];
@@ -28,8 +28,8 @@ int main(){
 			somaPar += numero[i];
 		}
 	}
-	media = (float)soma / i;
-	mediaPar = (float)somaPar / par;
+	media = (float) soma / i;
+	mediaPar = (float) somaPar / par;
 	
 		printf("Quantidade de numeros impares: %d\n",impar);
 		printf("Quantidade de numeros negativos: %d\n",negativo);
